@@ -42,7 +42,7 @@
 
             // Function for dumping the JSON content for each button into the div
             function displayButtons() {
-                var qValue = $(this).attr("data-name");
+                var qValue = $(this).attr("data-name").val();
 
             }
 
@@ -90,19 +90,27 @@
                 renderButtons();
 
             });
-
             $("#buttons-view").on("click", function(event) {
                 event.preventDefault();
+                $("#image-dump").empty();
 
                 var qValue = $(this).attr("data-name");
                 // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
+                var imageUrls = [0, 2, 3, 4, 5, 6, 7, 8, 9];
+                // imageUrlsArray = []
                 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=fd97xm0dye3ax1q8GiTZdrvMbUMqJTEt&q=" + qValue + "&limit=10&offset=0&rating=G&lang=en";
                 $.ajax({
                     url: queryURL,
                     method: "GET"
                 }).done(function(dataDump) {
-                    $("#image-dump").text(JSON.stringify(dataDump.data[3].images.downsized_medium.url));
-                    console.log(dataDump.data.slice(0, 9).images.downsized_medium.url);
+                    for (var i = 0; i < imageUrls.length; i++) {
+                        var getUrls = dataDump.data[i].images.fixed_height_small.url;
+                        // $(imageUrlsArray).push(getUrls);
+                        var newElement = $(`<img src=${getUrls}>`);
+                        $("#image-dump").append(newElement);
+                        console.log(qValue);
+                        console.log(getUrls);
+                    }
                 });
 
             });
