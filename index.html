@@ -28,11 +28,11 @@
             <label for="category-input">Who's your favorite comedian?</label>
             <input type="text" id="comic-input"><br>
 
-            <!-- Button triggers new movie to be added -->
+            <!-- Button triggers new movie button to be added -->
             <input id="comicAdd" type="submit" value="SUBMIT">
         </form>
 
-        <!-- Images will Get Dumped Dere -->
+        <!-- Images will Get Dumped here -->
         <div id="image-dump"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -41,17 +41,15 @@
             var comics = ["Eddie Murphy", "Richard Pryor", "Robin Williams", "Dana Carvey"];
 
             // Function for dumping the JSON content for each button into the div
-            function displayImages() {
+            function displayButtons() {
                 var qValue = $(this).attr("data-name");
-                // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
-                var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=fd97xm0dye3ax1q8GiTZdrvMbUMqJTEt&q=" + qValue + "&limit=10&offset=0&rating=G&lang=en";
-                $.ajax({
-                    url: queryURL,
-                    method: "GET"
-                }).done(function(data) {
-                    $("#image-dump").text(JSON.stringify(data.images.fixed_height_small));
-                    renderButtons();
-                });
+
+            }
+
+            var results = [];
+
+            function displayResults() {
+
             }
 
             // Function for displaying movie data
@@ -82,7 +80,7 @@
             $("#comicAdd").on("click", function(event) {
                 event.preventDefault();
 
-                // This line grabs the input from the textbox
+                // This line grabs the input from the button
                 var qValue = $("#comic-input").val().trim();
 
                 // The movie from the textbox is then added to our array
@@ -93,8 +91,24 @@
 
             });
 
+            $("#buttons-view").on("click", function(event) {
+                event.preventDefault();
+
+                var qValue = $(this).attr("data-name");
+                // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
+                var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=fd97xm0dye3ax1q8GiTZdrvMbUMqJTEt&q=" + qValue + "&limit=10&offset=0&rating=G&lang=en";
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).done(function(dataDump) {
+                    $("#image-dump").text(JSON.stringify(dataDump.data[3].images.downsized_medium.url));
+                    console.log(dataDump.data[3].images.downsized_medium.url);
+                });
+
+            });
+
             // Generic function for displaying the movieInfo
-            $(document).on("click", ".qValue", displayImages);
+            $(document).on("click", ".qValue", displayButtons);
 
             // Calling the renderButtons function to display the intial buttons
             renderButtons();
