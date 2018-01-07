@@ -102,7 +102,7 @@
                     method: "GET"
                 }).done(function(dataDump) {
                     $("#image-dump").text(JSON.stringify(dataDump.data[3].images.downsized_medium.url));
-                    console.log(dataDump.data[3].images.downsized_medium.url);
+                    console.log(dataDump.data.slice(0, 9).images.downsized_medium.url);
                 });
 
             });
