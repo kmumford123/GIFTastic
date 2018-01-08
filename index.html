@@ -2,128 +2,148 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style type="text/css">
-        button,
-        div,
-        form,
-        input {
-            margin: 10px;
-        }
-    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body id="page-top">
 
-    <div class="container">
-        <h1>Laughter is a GIF</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">GIFTastic</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
 
-        <!-- Buttons will go here -->
-        <div id="buttons-view"></div>
+            </div>
+        </div>
+    </nav>
 
-        <form id="category-form">
-            <label for="category-input">Who's your favorite comedian?</label>
-            <input type="text" id="comic-input"><br>
 
-            <!-- Button triggers new movie button to be added -->
-            <input id="comicAdd" type="submit" value="SUBMIT">
-        </form>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Comedians give the GIF of laughter!!!</h1>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <form id="category-form">
+                    <h3 class="mb-3">Enter the name of your favorite comedian</h3>
+                    <input type="text" id="comic-input"><br><br>
 
-        <!-- Images will Get Dumped here -->
-        <div id="image-dump"></div>
+                    <!-- Button triggers new movie button to be added -->
+                    <input class="btn btn-primary btn-xl page-scroll" id="comicAdd" type="submit" value="SUBMIT">
+                    <p></p>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-2"> -->
+                <!-- <div class="service-box mt-5 mx-auto"></div> -->
+                <!-- Buttons will go here -->
+                <span id="buttons-view" class="text-center"></span>
+                <!-- </div> -->
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            // Initial array of movies
-            var comics = ["Eddie Murphy", "Richard Pryor", "Robin Williams", "Dana Carvey"];
+    <section class="p-0" id="portfolio">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+                        <img id="image-dump" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <!-- Images will Get Dumped here -->
+                                <div id="image-dump"></div>
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-            // Function for dumping the JSON content for each button into the div
-            function displayButtons() {
-                var uInput = $(this).attr("data-name").val();
-            }
 
-            function displayResults() {
+                <section class="bg-dark text-white">
+                    <div class="container text-center">
+                        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+                        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+                    </div>
+                </section>
 
-            }
+                <section id="contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h2 class="section-heading">Let's Get In Touch!</h2>
+                                <hr class="my-4">
+                                <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 ml-auto text-center">
+                                <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                                <p>123-456-6789</p>
+                            </div>
+                            <div class="col-lg-4 mr-auto text-center">
+                                <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                                <p>
+                                    <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            // Function for displaying buttons and associated data
-            function renderButtons() {
+                <!-- Bootstrap core JavaScript -->
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                // Deleting the buttons prior to adding new ones
-                // (this is necessary otherwise you will have repeat buttons)
-                $("#buttons-view").empty();
+                <!-- Plugin JavaScript -->
+                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+                <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-                // Looping through the array of comics
-                for (var i = 0; i < comics.length; i++) {
+                <!-- Custom scripts for this template -->
+                <script src="js/creative.min.js"></script>
 
-                    // Then dynamicaly generating buttons for each comedian in the array
-                    var a = $("<button>");
-                    // Adding a class of qComic to our button
-                    a.addClass("qComic");
-                    // Adding a data-attribute
-                    a.attr("data-name", comics[i]);
-                    // Providing the initial button text
-                    a.text(comics[i]);
-                    // Adding the button to the buttons-view div
-                    $("#buttons-view").append(a);
-                }
-            }
+                <!-- Gipy logic scripts -->
+                <script src="js/logic.js"></script>
 
-            // This function handles events where one button is clicked
-            $("#comicAdd").on("click", function(event) {
-                event.preventDefault();
-
-                // This line grabs the input from the button
-                var uInput = $("#comic-input").val().trim();
-
-                // The comedian from the textbox is then added to our array
-                comics.push(uInput);
-
-                // Calling renderButtons which handles the processing of our comics array
-                renderButtons();
-
-            });
-            $("#buttons-view").on("click", function(event) {
-                event.preventDefault();
-                $("#image-dump").empty();
-
-                //Taking the value of the button to be used in the API call
-                var qValue = $(this).attr("data-name");
-
-                //Key for API call
-                var apiKey = "fd97xm0dye3ax1q8GiTZdrvMbUMqJTEt"
-
-                //Setting a variable to store the object indexes of the response for further processing
-                var imageUrls = [0, 2, 3, 4, 5, 6, 7, 8, 9];
-
-                //dynamically applying the query string to the API call based on the data-name of the clicked button
-                var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + qValue + "&limit=10&offset=0&rating=G&lang=en";
-                $.ajax({
-                    url: queryURL,
-                    method: "GET"
-                }).done(function(dataDump) {
-                    for (var i = 0; i < imageUrls.length; i++) {
-                        var getUrls = dataDump.data[i].images.fixed_height_small.url;
-                        var newElement = $(`<img src=${getUrls}>`);
-                        $("#image-dump").append(newElement);
-                        console.log(qValue);
-                        console.log(getUrls);
-                    }
-                });
-
-            });
-
-            // Generic function for displaying the movieInfo
-            $(document).on("click", ".category-input", displayButtons);
-
-            // Calling the renderButtons function to display the intial buttons
-            renderButtons();
-        </script>
-    </div>
-</body>
 </body>
 
 </html>
