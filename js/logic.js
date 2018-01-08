@@ -49,6 +49,7 @@ $("#comicAdd").on("click", function(event) {
 });
 $("#buttons-view").on("click", function(event) {
     event.preventDefault();
+    //removing previous images forwarded tothe DOM (...who lives his life 1/4 mile at at time btw)
     $("#image-dump").empty();
 
     //Taking the value of the button to be used in the API call
