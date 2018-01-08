@@ -68,7 +68,7 @@ $("#buttons-view").on("click", function(event) {
         method: "GET"
     }).done(function(dataDump) {
         for (var i = 0; i < imageUrls.length; i++) {
-            var getUrls = dataDump.data[i].images.fixed_height_small.url;
+            var getUrls = dataDump.data[i].images.original_still.url;
             var newElement = $(`<img src=${getUrls}>`);
             $("#image-dump").append(newElement);
             console.log(qValue);
