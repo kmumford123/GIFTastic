@@ -72,8 +72,9 @@ $(document).ready(function() {
             for (var i = 0; i < imageUrls.length; i++) {
                 var getStills = dataDump.data[i].images.original_still.url;
                 var getAnimates = dataDump.data[i].images.fixed_width_downsampled.url;
+                var getRating = dataDump.data[i].rating;
                 var newElement = $(`<img src=${getStills} data-still=${getStills} data-animate=${getAnimates} data-state="still" class="gif">`);
-                $("#image-dump").append(newElement);
+                $("#image-dump").append(newElement).append($("<div>").text(`Rating: ${getRating}`));
                 console.log(qValue);
                 console.log(getAnimates);
             }
