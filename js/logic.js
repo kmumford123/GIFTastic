@@ -70,12 +70,27 @@ $(document).ready(function() {
             method: "GET"
         }).done(function(dataDump) {
             for (var i = 0; i < imageUrls.length; i++) {
-                var getUrls = dataDump.data[i].images.original_still.url;
-                var newElement = $(`<img src=${getUrls}>`);
+                var getStills = dataDump.data[i].images.original_still.url;
+                var getAnimates = dataDump.data[i].images.fixed_width_downsampled.url;
+                var newElement = $(`<img src=${getStills} data-still=${getStills} data-animate=${getAnimates} data-state="still" class="gif">`);
                 $("#image-dump").append(newElement);
                 console.log(qValue);
-                console.log(getUrls);
+                console.log(getAnimates);
             }
+            $(document).on("click", ".gif", function() {
+                // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                var state = $(this).attr("data-state");
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+            });
         });
 
     });
